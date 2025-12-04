@@ -1,0 +1,22 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: python-tvrtqcmn-gitops
+  description: This is GitOps manifest for python-tvrtqcmn   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=python-tvrtqcmn
+    backstage.io/kubernetes-id: python-tvrtqcmn 
+    backstage.io/techdocs-ref: dir:.
+    dev.azure.com/project: shared-public
+    dev.azure.com/build-definition: python-tvrtqcmn-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:python-tvrtqcmn
